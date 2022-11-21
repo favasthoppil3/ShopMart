@@ -1,0 +1,22 @@
+#Iphone-image{
+    background-image:url("../../assets/iphones/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-hero-220907_Full-Bleed-Image.jpg.large.jpg");
+    height: 89vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 30px;
+    margin-top: 70px;
+}
+a{
+    cursor: pointer;
+}
+i{
+    cursor: pointer;
+}
+#video iframe{
+    margin-top: 100px;
+    width: 100%;
+    height: 100vh;
+}

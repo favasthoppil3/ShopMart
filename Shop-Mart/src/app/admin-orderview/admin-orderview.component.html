@@ -1,0 +1,99 @@
+<nav class="navbar navbar-expand-lg bg-light fixed-top fw-bold">
+    <div class="container-fluid">
+      <h2>Order</h2>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/admin">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/orderView-admin">Orders</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Watch</a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Laptop</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/viewuser">Users</a>
+          </li>
+        </ul>
+       
+        
+      </div>
+    </div>
+  </nav>
+      
+<section>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col" class="ps-5">Image</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of orderAllItems; let i= index" >
+            <th scope="row">{{i+1}}</th>
+            <td><img [src]="item.image" width="150px" alt=""></td>
+            <td class="pt-5"><strong><label for="">{{item.name}}</label></strong></td>
+            <td class="pt-5"><strong>{{item.Totalamount |currency:"INR" }}</strong></td>
+            <td class="pt-5"><button class="btn btn-primary" data-bs-toggle="modal"(click)="address(item)" href="#exampleModalToggle" role="button">Address</button></td>
+          </tr>
+          
+        </tbody>
+      </table>
+</section>
+      
+
+
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Address</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <div>
+                <strong><label for="" class="fs-5">First Name:</label></strong> <span class="text-primary fs-4"> {{Fname}}</span>
+            </div>
+            <div>
+                <strong><label for="" class="fs-5">Last Name:</label></strong><span class="text-primary fs-4">  {{Lname}}</span>
+            </div>
+            <div>
+                <strong><label for="" class="fs-5">Email:</label></strong><span class="text-primary fs-4"> {{Email}}</span>
+            </div>
+            <div>
+                <strong><label for="" class="fs-5">Mobile No:</label></strong><span class="text-primary fs-4"> {{Phone}}</span>
+            </div>
+            <div>
+                <strong><label for="" class="fs-5">Landmark:</label></strong><span class="text-primary fs-4"> {{Landmark}}</span>
+            </div>
+            <div>
+                <strong><label for="" class="fs-5">Pincode:</label></strong><span class="text-primary fs-4"> {{Pincode}}</span>
+            </div>
+            
+        </div>
+        
+    </div>
+  </div>

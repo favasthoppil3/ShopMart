@@ -1,0 +1,78 @@
+#User_home{
+    max-width: 100%;
+    height: 100vh;
+
+}
+.carousel-inner img{
+    height: 100%;
+    /* background:linear-gradient(rgba(0, 0, 0, 0.819), rgb(0, 0, 0)); */
+    opacity: 10;
+
+}
+#carouselExampleInterval{
+    height: 100vh;
+    overflow: hidden;
+
+}
+.main_head{
+    position:relative;
+    bottom: 470px;
+}
+h1{
+    font-size: 70px;
+    font-family: Oswald, sans-serif;
+    letter-spacing: 10px;
+    font-weight: bold;
+
+}
+h2{
+    font-family: Oswald, sans-serif;
+}
+
+
+i:hover{
+    cursor: pointer;
+}
+/* .green {
+    color: green;
+}
+
+.black {
+    color: black;
+} */
+.images img:hover{
+    transform: scale(1.1);
+    transition: 1s;
+    cursor: pointer;
+}
+.mob-img{
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+    border: 10px solid black;
+
+}
+.mob-img img{
+    width: 100%;
+}
+.WEl{
+  font-family: 'Great Vibes', cursive;
+
+}
+.navbar-toggler{
+    font-size: 15px;
+    /* position: relative;
+    right: 410px; */
+}
+.bi-person{
+    margin-top: 2px;
+}
+
+/* 
+  @media (max-width: 575.98px) { 
+    #Shopmart{
+        position: relative;
+        left: 185px;
+    }
+       
+   } */

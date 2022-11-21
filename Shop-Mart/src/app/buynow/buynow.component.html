@@ -1,0 +1,195 @@
+<nav class="navbar navbar-expand-lg bg-dark fw-bold fixed-top text-white">
+  <div class="container-fluid">
+    <h2 id="Shopmart">ShopMart</h2>
+    <button
+      class="navbar-toggler bg-white"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-white" routerLink="/home" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active text-white"  aria-current="page">Mobiles</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page">Watch</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page">Laptop</a>
+        </li>
+
+        <div class="ms-4 mt-1">
+          <i class="bi bi-cart3 fs-4" id="cart" routerLink="/cart"></i>
+        </div>
+        <div class="">
+          <i class="bi bi-person fs-3 ms-3" style=""></i>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ---------------------------------------------------------- -->
+<section class="container ">
+  <div class="p-5">
+    <div class="row">
+      <!-- ------------------------------col -------------------------------------------------------->
+      <div class="col">
+        <div class="card border-0 shadow pt-4 pb-4">
+          <div class="d-flex">
+            <img [src]="buynowPRoducts.image" alt="" style="width: 200px" />
+            <div class="row">
+              <!-- col -->
+              <div class="col-md-4" style="width: 200px">
+                <div class="mt-5">
+                  <h5>
+                    {{ buynowPRoducts.name }}
+                  </h5>
+                </div>
+              </div>
+              <!-- col -->
+              <div class="col-md-4" style="width: 200px">
+                <div class="mt-5">
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-md">
+                          <li class="page-item active" aria-current="page">
+                            <span class="page-link">1</span>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        </ul>
+                      </nav>
+                </div>
+              </div>
+              <!-- col -->
+              <div class="col-md-4" style="width: 200px">
+                <div class="mt-5">
+                  <h5>
+                    {{ buynowPRoducts.price | currency: "INR" }}
+                  </h5>
+                </div>
+              </div>
+
+              <!-- col -->
+              <div class="col-md-4" style="width: 200px">
+                <div class="mt-5">
+
+                  <button class="btn btn-outline-dark" data-bs-toggle="modal"  href="#exampleModalToggle" role="button">Product Details</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Modal -->
+
+      
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content ">
+      <div class="modal-body  ">
+        
+          <div class=" p-3">
+            <h6><strong> PRODUCT DETAILS</strong></h6>
+          </div>
+          <hr>
+          <div class="p-3">
+            <form>
+              <div class="d-flex mt-3">
+                <h6>Product price</h6>
+                <div class="ms-auto">
+                  <h6>{{buynowPRoducts.price | currency: "INR"}}</h6>
+                
+                </div>
+              </div>
+              <hr>
+
+              <div class="d-flex mt-3">
+                <h6>Shipping cost</h6>
+                <div class="ms-auto">
+                  <h6>Free</h6>
+                </div>
+              </div>
+              <hr>
+
+              <div class="mt-5 d-flex">
+                <h6>Total Amount</h6>
+                <div class="ms-auto">
+                  <h6>{{buynowPRoducts.price | currency: "INR"}}</h6>
+                </div>
+              </div>
+
+              <div class="text-center mt-5 mb-5">
+                <button class="btn btn-success w-50"[routerLink]="['/order-palace',buynowPRoducts._id]" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Order now</button>
+              </div>
+            </form>
+  
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+      
+
+      <!-- ------------------------------col ------------------------------------------------------------------>
+      <!-- <div class="row" style="position:relative;bottom:200px;left: 820px;">
+      <div class="col-md-4">
+        <div class="border-0 shadow rounded">
+          <div class="bg-secondary p-3">
+            <h5>Summary</h5>
+          </div>
+          <div class="p-3">
+            <form>
+              <div class="d-flex mt-3">
+                <h6>Product price</h6>
+                <div class="ms-auto">
+                  <h6>{{buynowPRoducts.price | currency: "INR"}}</h6>
+                
+                </div>
+              </div>
+              <hr>
+
+              <div class="d-flex mt-3">
+                <h6>Shipping cost</h6>
+                <div class="ms-auto">
+                  <h6>Free</h6>
+                </div>
+              </div>
+              <hr>
+
+              <div class="mt-5 d-flex">
+                <h6>Total Amount</h6>
+                <div class="ms-auto">
+                  <h6>{{buynowPRoducts.price | currency: "INR"}}</h6>
+                </div>
+              </div>
+
+              <div class="text-center mt-5 mb-5">
+                <button class="btn btn-primary w-75"[routerLink]="['/order-palace',buynowPRoducts._id]">Go to checkout</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    </div>
+  </div>
+</section>

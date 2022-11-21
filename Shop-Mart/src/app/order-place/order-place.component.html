@@ -1,0 +1,245 @@
+<nav class="navbar navbar-expand-lg bg-dark fw-bold fixed-top text-white">
+  <div class="container-fluid">
+    <h2 id="Shopmart">ShopMart</h2>
+    <button
+      class="navbar-toggler bg-white"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page">Mobiles</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page">Watch</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page">Laptop</a>
+        </li>
+
+        <div class="ms-4 mt-1">
+          <i class="bi bi-cart3 fs-4" id="cart" routerLink="/cart"></i>
+        </div>
+        <div class="">
+          <i class="bi bi-person fs-3 ms-3" style=""></i>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ------------------------- -->
+
+<section>
+  <div class="container">
+    <div class="row pb-4">
+      <div class="col-md-8">
+        <div class="card shadow">
+          <div class="bg-dark text-white p-3">
+            <h5>Place Order</h5>
+          </div>
+          <div
+            class="pt-4 pb-5"
+            style="padding-left: 100px; padding-right: 100px"
+          >
+            <form [formGroup]="orderForm">
+              <div class="d-flex">
+                <div class="me-4">
+                  <label for="validationCustomUsername">First name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="Fname"
+                  />
+                </div>
+                <div class="">
+                  <label for="">Last name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="Lname"
+                  />
+                </div>
+              </div>
+
+              <div class="mt-3">
+                <label for="">Email</label>
+                <input
+                  type="text"
+                  class="form-control w-100"
+                  formControlName="Email"
+                />
+              </div>
+              <div class="mt-3">
+                <label for="">Phone</label>
+                <input
+                  type="text"
+                  class="form-control w-100"
+                  formControlName="Phone"
+                />
+              </div>
+              <div class="mt-3">
+                <label for="">Address</label>
+                <input
+                  type="text"
+                  class="form-control w-100"
+                  formControlName="Address"
+                />
+              </div>
+              <div class="mt-3">
+                <label for="">Landmark</label>
+                <input
+                  type="text"
+                  class="form-control w-100"
+                  formControlName="Landmark"
+                />
+              </div>
+              <div class="mt-3">
+                <label for="">Pincode</label>
+                <input
+                  type="text"
+                  class="form-control w-100"
+                  formControlName="Pincode"
+                />
+              </div>
+          
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- ----------------col ------------------------->
+      <div class="col-md-4">
+        <div class="card border-0 shadow">
+          <div class="bg-dark text-white p-3">
+            <h5>Summary</h5>
+          </div>
+          <div class="p-3">
+            <form [formGroup]="order">
+
+              <div class="d-flex mt-3">
+                <h6>Product Name</h6>
+                <div class="ms-auto">
+                  <h6 class="fw-bold fs-5">{{ orders.name}}</h6>
+                </div>
+              </div>
+              <hr />
+
+              <div class="d-flex mt-3">
+                <h6>Product Price</h6>
+                <div class="ms-auto">
+                  <h6 class="text-decoration-line-through">{{ orders.price | currency: "INR" }}</h6>
+                </div>
+              </div>
+              <hr />
+
+              <div class="d-flex mt-3">
+                <h6>Offer Price</h6>
+                <div class="ms-auto">
+                    <h6>{{ orders.offer_price | currency: "INR" }}</h6>
+                </div>
+              </div>
+              <hr />
+
+              <div class="d-flex mt-3">
+                <h6>Shipping</h6>
+                <div class="ms-auto">
+                  <h6>Free</h6>
+                </div>
+              </div>
+              <hr />
+
+
+              <div class="d-flex mt-4 text-primary">
+                <div class="w-25">
+                  <input type="radio"  class=" " formControlName="Payment" value="Rupay" data-bs-toggle="modal"  href="#exampleModalToggle" role="button">
+                  <label for="" class="ms-2">Rupay</label>
+
+                </div>
+                <div class="w-50">
+                    <input type="radio"  class=""  formControlName="Payment" value="Cash on delivery">
+                    <label for="" class="ms-2">Cash on delivery</label>
+                </div>
+                  <div class="w-50 ">
+                    <input type="radio"  class=""  formControlName="Payment" value="Google pay" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">
+                    <label for="" class="ms-2">Google pay</label>
+                  </div>
+              </div>
+
+              
+              <div class="mt-5 d-flex">
+                <h6>Total Amount</h6>
+                <div class="ms-auto">
+                  <h6>{{ orders.offer_price | currency: "INR" }}</h6>
+                </div>
+              </div>
+
+              <div class="text-center mt-5 mb-5">
+                <button class="btn btn-success"(click)="orderNow(orders)" >
+                  Order Now
+                </button>
+                <div class="text-primary" *ngIf="false">Please</div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ----------------------------------- -->
+
+
+
+
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Rupay</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Show a second modal and hide this one with the button below.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Google Pay</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Show a second modal and hide this one with the button below.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+

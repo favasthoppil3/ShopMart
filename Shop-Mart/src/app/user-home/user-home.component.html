@@ -1,0 +1,327 @@
+
+<section id="User_home" >
+  <div class="bg-dark">
+
+<nav class="navbar navbar-expand-lg   bg-dark  fw-bold fixed-top text-white">
+    <div class="container-fluid  ">
+      <h2 id="Shopmart">ShopMart</h2>
+      <button
+        class="navbar-toggler bg-white "
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0 ">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page"  >Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" routerLink="/iphone-page"  >Iphone</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" routerLink="/samsung-page" >Samsung</a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" routerLink="/realme-page" >Realme</a>
+          </li>
+         
+          <div class=" ms-4 mt-1">
+            <i class="bi bi-cart3 fs-4 " id="cart" routerLink="/cart"></i>
+          </div>
+          <div class="" >
+            <i class="bi bi-person fs-3 ms-3 " data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i> 
+              
+          </div>
+
+        
+          
+        </ul>
+      
+      </div>
+      <!-- ICON -->
+      
+      
+    </div>
+   
+    
+  </nav>
+  
+</div>
+
+
+
+  <!-- Profile popup --------------------------------------------->
+  
+  
+  <!-- ------------------------------------- -->
+
+
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="1000">
+        <img src="../../assets/iphones/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-hero-220907_Full-Bleed-Image.jpg.large.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" ata-dbs-interval="1000">
+        <img src="../../assets/samsung/anh-nhat-N9w70b_ulyI-unsplash.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" ata-dbs-interval="1000">
+        <div class=" text-center " style="position:relative ;left:25%; top:180px ; ;" >
+        <img src="../../assets/realme/Realme-GTNeo3-Mobile-Phone-58.jfif" class="d-block w-50 " alt="...">
+        <img src="../../assets/realme/Realme-GTNeo3-Mobile-Phone-66.jfif" height="100vh" class="d-block w-50  " alt="..." >
+      </div>
+    </div>
+    </div>
+  
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon " aria-hidden="true"></span>
+      <span class="visually-hidden ">Next</span>
+    </button>
+  </div>
+
+
+
+ 
+  
+</section>
+
+<!-- Iphone Products -->
+
+<!-- <div class="container"> 
+<div class="row mt-5  ">
+    <div class="col-md-4">
+      <div><h1>222</h1></div>
+    </div>
+    <div class="col-md-4">
+      <div><h1>gff</h1></div>
+
+    </div>
+    <div class="col-md-4">
+
+    </div>
+</div>
+</div> -->
+
+
+<section id="mobile" class="container mt-5" >
+
+  <div>
+    <h2 class="text-center">IPHONE</h2>
+  </div>
+
+  <div class="container-fluid ">
+  <div class="row  ">
+      <div class="col-lg-3 mb-5" *ngFor="let item of AllProducts" [ngStyle]="{display:item.category=='Iphone'? 'block':'none'}">
+      <div class="card border-0 shadow mt-5 p-4  "  >
+          <h5 class="card-title mt-2 mb-3">{{item.name}}</h5>
+          <div class="images mb-5">
+          <img [src]="item.image" class="card-img-top" alt="..." [routerLink]="['/orderProduct',item._id]" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
+
+          </div>
+          <h6>
+            <i class="bi bi-star-fill text-warning"></i
+            ><i class="bi bi-star-fill text-warning"></i
+            ><i class="bi bi-star-fill text-warning"></i
+            ><i class="bi bi-star color"></i><i class="bi bi-star color"></i> 10
+            review
+          </h6>
+          <div class=" ">
+            <p ><strong> <span class="fs-5">{{ item.offer_price | currency:'INR'}}</span> <span  class="text-decoration-line-through text-secondary ms-2">{{item.price|currency:'INR'}}</span> </strong></p>
+
+          </div>
+          <div class="d-flex ms-auto">
+            <i class="bi bi-cart-check-fill fs-3 " (click)="addtoCart(item)" [ngClass]="{'green':toggle,'black':!toggle}"></i>
+
+
+          </div>
+      </div>
+        </div>
+  </div>
+</div>
+</section>
+
+
+
+<!-- Watch Products -->
+<!-- <div class="mt-5 ">
+  <div class="mob-img ">
+    <img src="../../assets/david-svihovec-5qMN7iXbUsk-unsplash.jpg" alt=""class=" ">
+  </div>
+</div> -->
+
+<hr>
+
+<section class="container mt-5"  >
+
+  <div>
+    <h2 class="text-center">SAMSUNG</h2>
+  </div>
+
+  <div class="container-fluid ">
+  <div class="row  ">
+      <div class="col-md-3 mb-5" *ngFor="let item of AllProducts" [ngStyle]="{display:item.category=='Samsung'? 'block':'none'}">
+      <div class="card border-0 shadow mt-5 p-4  "  >
+          <h5 class="card-title mt-2 mb-3">{{item.name}}</h5>
+          <div class="images mb-5">
+          <img [src]="item.image" class="card-img-top" alt="..." [routerLink]="['/orderProduct',item._id]" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
+          </div>
+          <h6>
+            <i class="bi bi-star-fill text-warning"></i
+            ><i class="bi bi-star-fill text-warning"></i
+            ><i class="bi bi-star-fill text-warning"></i
+            ><i class="bi bi-star color"></i><i class="bi bi-star color"></i> 10
+            review
+          </h6>
+          <div class="d-">
+            <p ><strong><span class="fs-5" >{{item.offer_price | currency:'INR' }}</span><span class="text-decoration-line-through text-secondary ms-2 ">{{item.price | currency:'INR'}}</span></strong></p>
+
+          </div>
+          <div class="d-flex ms-auto">
+            <i class="bi bi-cart-check-fill fs-3 " (click)="addtoCart(item)" [ngClass]="{'green':toggle,'black':!toggle}"></i>
+
+
+          </div>
+      </div>
+        </div>
+  </div>
+</div>
+</section>
+
+<!-- Laptop Products -->
+
+<hr>
+
+
+<!-- <div class="mt-5">
+  <div class="mob-img">
+    <img src="../../assets/" alt=""class=" ">
+  </div>
+</div> -->
+
+<section class="container mt-5">
+
+  <div>
+    <h2 class="text-center">REALME</h2>
+  </div>
+
+  <div class="container-fluid ">
+  <div class="row  ">
+      <div class="col-md-3 mb-5" *ngFor="let item of AllProducts" [ngStyle]="{display:item.category=='Realme'? 'block':'none'}">
+      <div class="card border-0 shadow mt-5 p-4  "  >
+          <h5 class="card-title mt-2 mb-3">{{item.name}}</h5>
+          <div class="images mb-5">
+          <img [src]="item.image" class="card-img-top" alt="..."[routerLink]="['/orderProduct',item._id]" data-bs-toggle="modal" href="#exampleModalToggle" role="button">
+          </div>
+          <h6>
+            <i class="bi bi-star-fill text-warning"></i
+            ><i class="bi bi-star-fill text-warning"></i
+            ><i class="bi bi-star-fill text-warning"></i
+            ><i class="bi bi-star color"></i><i class="bi bi-star color"></i> 10
+            review
+          </h6>
+          <div class="">
+            <!-- <p class=""><strong>{{item.price | currency:'INR'}}</strong></p> -->
+            <p ><strong> <span class="fs-5">{{item.offer_price | currency:'INR'}} </span><span  class="text-decoration-line-through text-secondary"> {{item.price|currency:"INR"}}</span></strong></p>
+
+
+          </div>
+          <div class="d-flex ms-auto ">
+            <i class="bi bi-cart-check-fill fs-3 " (click)="addtoCart(item)" [ngClass]="{'green':toggle,'black':!toggle}"></i>
+
+
+          </div>
+      </div>
+        </div>
+  </div>
+</div>
+</section>
+
+
+
+<!-- <div  *ngFor="let item of Viewcards" > -->
+
+
+
+<!-- <div class="modal fade " id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" >
+    <div class="modal-content" > -->
+
+
+
+      <!-- <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Mobile</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div> -->
+
+
+      <!-- <div  class="modal-body pt-5 pb-5  "> -->
+        <!-- <div class="d-flex">
+          <img [src]="cardImage" alt="" class="w-50">
+          <div class="w-100">
+            <h4 class="mt-3 ">{{cardName}}</h4>
+            <p class=""><strong>{{cardPrice | currency:'INR'}}</strong></p>
+            <p class=""><strong>{{cardCategory}}</strong></p>
+            <a class="btn btn-success"  data-bs-toggle="modal" href="#exampleModalToggle" role="button">Buy now</a>
+
+          </div>
+        </div> -->
+
+        
+        
+      <!-- <div class="modal-footer">
+        <button class="btn btn-outline-dark" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Add Product</button>
+      </div> -->
+
+<!--       
+    </div>
+
+    </div>
+  </div>
+</div> -->
+
+
+<!-- </div> -->
+
+<!-- --------------------------Profile Side------------------ -->
+
+<div class="offcanvas offcanvas-end rounded-bottom" style="width: 250px; height: 300px; margin-top: 62px; " tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="   d-flex ms-4 mt-3">
+    <div class="bg-secondary rounded-circle " style="width: 50px; height:50px; ">
+    </div>
+    <div>
+    <h6 class="ms-3 mt-1"  >{{Uname}}</h6>
+    <p class="ms-3"  style="font-size:12px ;">{{Email}}</p>
+  </div>
+</div>
+<hr>
+
+
+  <div class=" ms-4 ">
+    <div>
+      <i class="bi bi-person fs-4 me-3"></i>
+      <strong><a class="" >Profile</a></strong>
+    </div>
+    <div>
+      <i class="bi bi-bag-check fs-4 me-3" ></i>
+      <strong><a class="text-decoration-none text-dark" routerLink="/userView-admin" >Orders</a></strong>
+    </div>
+    <div class="mt-1">
+      <strong><i class="bi bi-box-arrow-left fs-4  me-3" ></i></strong>
+      <strong><a class="text-decoration-none text-dark" routerLink="/login">Logout</a></strong>
+    </div>
+    
+  </div>
+</div>
+
+
+<app-footer></app-footer>

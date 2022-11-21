@@ -1,0 +1,26 @@
+#Samsung-image{
+    background-image:url("../../assets/samsung/anh-nhat-EAxD2WHqxmY-unsplash.jpg");
+    height: 89vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 30px;
+    margin-top: 70px;
+}
+a{
+    cursor: pointer;
+}
+i{
+    cursor: pointer;
+}
+#samsung{
+    background-image:url("../../assets/samsung/Samusng-S22-Ultra-Smartphone-Set-12222-21.jfif");
+    height: 120vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-top: 70px;
+}

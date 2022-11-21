@@ -1,0 +1,157 @@
+<section>
+<nav class="navbar navbar-expand-lg bg-light fixed-top fw-bold">
+  <div class="container-fluid">
+    <h2>Admin</h2>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/admin">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/products">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/orderView-admin">Orders</a>
+        </li>
+        
+        <!-- <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Watch</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Laptop</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/viewuser">Users</a>
+        </li>
+      </ul>
+      <div>
+        <a class="btn btn-outline-dark me-3" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Add Product</a>
+      </div>
+     
+      <div>
+        <a class="btn btn-outline-dark " routerLink="/login">Log out</a>
+      </div>
+      
+    </div>
+  </div>
+</nav>
+
+
+<div class="modal fade " id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Products</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <form [formGroup]="productForm" class="modal-body bg-light" >
+        <div class="container">
+        <div class="row ">
+          <div class="col-md-6">
+        <div class="mb-3">
+          <label for="">Name</label>
+          <input type="text" class="form-control" formControlName="P_name" placeholder="Iphone">
+        </div>
+        <div class="mb-3">
+          <label for="">Price</label>
+          <input type="text" class="form-control" formControlName="P_price" placeholder="$ 0.00">
+        </div>
+        <div class="mb-3">
+          <label for="">Offer price</label>
+          <input type="text" class="form-control" formControlName="offer_price"  placeholder="$ 0.00">
+        </div>
+        <div class="mb-3">
+          <label for="">Brand</label>
+          <select class="form-select" aria-label="Default select example" formControlName="P_category"  value="Mobile">
+            <option value="Iphone">Iphone</option>
+            <option value="Samsung">Samsung</option>
+            <option value="Realme">Realme</option>
+            <option value="Redmi">Redmi</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="">Images</label>
+          <input type="text" class="form-control" formControlName="P_image"  placeholder="Main image">
+        </div>  
+        <div class="mb-3 d-flex">
+          
+          <input type="text" class="form-control w-50 me-2" formControlName="P2_image" placeholder="small image">
+          <input type="text" class="form-control w-50" formControlName="P3_image" placeholder="small image">
+        </div> 
+        <div class="mb-3 d-flex">
+          
+          <input type="text" class="form-control w-50 me-2" formControlName="P4_image" placeholder="small image">
+          <input type="text" class="form-control w-50" formControlName="P5_image" placeholder="small image">
+        </div> 
+        
+      </div>
+      <div class="col-md-6">
+        <div>
+          <div class="mb-3">
+            <label for="">Colour</label>
+            <input type="text" class="form-control" formControlName="color" placeholder="Green">
+          </div>
+          <div class="mb-3 ">
+            <label for="">Variant</label>
+            <div class="d-flex">
+            <input type="text" class="form-control me-2" formControlName="storage" placeholder="128 GB">
+            <input type="text" class="form-control" formControlName="ram" placeholder="6 GB">
+          </div>
+        </div>
+          <div class="mb-3">
+            <label for="">Specification</label>
+            <div class="d-flex">
+            <input type="text" class="form-control me-2" formControlName="p_cam" placeholder="Primary camera">
+            <input type="text" class="form-control" formControlName="S_cam" placeholder="Secondary camera">
+          </div>
+        </div>
+        <div class="d-flex ">
+          <input type="text" class="form-control me-2 mt-4" formControlName="D_size" placeholder="Display size">
+          <input type="text" class="form-control mt-4" formControlName="processor" placeholder="Processor">
+        </div>
+        <div class="d-flex ">
+          <input type="text" class="form-control me-2 mt-4" formControlName="battery" placeholder="Battery">
+          <input type="text" class="form-control mt-4" formControlName="charger" placeholder="Charger">
+        </div>
+        <div class="mt-4">
+          <label for="">Description</label>
+          <textarea  class="form-control" placeholder="Type..." formControlName="description" ></textarea>
+
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="modal-footer ">
+        <button class="btn btn-primary" (click)="Addproduct()" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Add Product</button>
+      </div>
+    </div>
+    </form>
+  
+</div>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+

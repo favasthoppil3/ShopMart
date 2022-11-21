@@ -1,0 +1,261 @@
+<nav class="navbar navbar-expand-lg bg-dark fw-bold fixed-top text-white">
+  <div class="container-fluid">
+    <h2 id="Shopmart" routerLink="/home">ShopMart</h2>
+    <button
+      class="navbar-toggler bg-white"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" routerLink="/home">Home</a>
+        </li>
+        
+      
+
+     
+
+        <div class="ms-4 mt-1">
+          <i class="bi bi-cart3 fs-4" id="cart" routerLink="/cart"></i>
+        </div>
+        <div class="">
+          <i class="bi bi-person fs-3 ms-3" style=""></i>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section class="" id="orderProduct">
+  <div class="container">
+    <div class="row">
+      <!-- Col -->
+      <div class="col-md-6 ">
+      <div class="">
+        <div class="card border-0 shadow pt-5 pb-5 text-center">
+          <div>
+            <img [src]="orderPrdct.image" alt="" width="300px" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 mt-3 ">
+            <div class="card border-0 shadow pt-3 pb-3 text-center ">
+              <div>
+                <img [src]="orderPrdct.P2_image" alt="" style="width: 100px" height="100px" (click)="imageView(orderPrdct)" data-bs-toggle="modal" href="#exampleModalToggle" role="button"  />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mt-3">
+            <div class="card border-0 shadow pt-3 pb-3 text-center ">
+              <div>
+                <img [src]="orderPrdct.P3_image" alt="" style="width: 100px" data-bs-toggle="modal" href="#exampleModalToggle" role="button"  />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 mt-3">
+            <div class="card border-0 shadow pt-3 pb-3 text-center ">
+              <div>
+                <img [src]="orderPrdct.P4_image" alt="" style="width: 100px" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mt-3">
+            <div class="card border-0 shadow pt-3 pb-3 text-center ">
+              <div>
+                <img [src]="orderPrdct.P5_image" alt="" style="width: 100px" />
+              </div>
+            </div>
+          </div>
+          
+          
+          
+        </div>
+      </div>
+    </div>
+      <!-- Col -->
+      <div class="col-md-6 pt-4 border " style=  "background-attachment: fixed;background-repeat: no-repeat;">
+
+        <div class=" p-5">
+          <h5>{{ orderPrdct.name }} ({{orderPrdct.color}},{{orderPrdct.storage}}GB)</h5>
+          <h6>
+            <i class="bi bi-star-fill text-warning"></i
+            ><i class="bi bi-star-fill text-warning"></i
+            ><i class="bi bi-star-fill text-warning"></i
+            ><i class="bi bi-star color"></i><i class="bi bi-star color"></i> 10
+            review
+          </h6>
+          <h2>  
+            {{ orderPrdct.offer_price | currency: "INR" }}
+            <span class="fs-5 text-decoration-line-through text-secondary"> {{ orderPrdct.price |currency:'INR'}}</span>
+          </h2>
+          <!-- -------------------------- -->
+          <div class="row mt-4 mb-2">
+
+            <div class="col-md-3 text-center ">
+              <div>
+              <i class="bi bi-cpu fs-6 text-secondary "></i>
+            </div>
+            <div class="text-secondary  " style="font-size: 13px;">
+              Processor
+            </div>
+            <div style="font-size: 14px; font-weight: 500">
+              <p >{{orderPrdct.processor}}</p>
+            </div>
+              
+            </div>
+
+            <div class="col-md-3 text-center ">
+              <div>
+                <i class="bi bi-camera fs-6 text-secondary"></i><i class=""></i>
+            </div >
+            <div class="text-secondary"style="font-size: 13px;">
+              Camera
+            </div>
+            <div class="" style="font-size: 14px;font-weight: 500">
+              <p>{{orderPrdct.P_cam}}</p>
+            </div>
+              
+            </div>
+
+            <div class="col-md-2 text-center " >
+              <div>
+                <i class="bi bi-battery-charging text-secondary fs-6"></i><i class=""></i>
+            </div>
+            <div class="text-secondary" style="font-size: 13px;">
+              Battery
+            </div>
+              <div style="font-size: 14px;font-weight: 500">
+                <p>{{orderPrdct.battery}}</p>
+              </div>
+            </div>
+
+            <div class="col-md-3 text-center">
+              <div>
+                <i class="bi bi-tv fs-6 text-secondary"></i><i class=""></i>
+            </div>
+            <div class="text-secondary" style="font-size: 13px;">
+              Display
+            </div>
+            <div style="font-size: 14px;font-weight: 500">
+              <p>{{orderPrdct.D_size}}</p>
+            </div>
+              
+            </div>
+
+            <div class="col-md-1 text-center ">
+              <div class="ms-1">
+                <i class="bi bi-sd-card fs-6 text-secondary"></i><i class=""></i>
+            </div>
+            <div class="text-secondary" style="font-size: 13px;">
+              Storage
+            </div>
+            <div style="font-size: 14px;font-weight: 500">
+              <p>{{orderPrdct.storage}}GB {{orderPrdct.ram}}GB</p>
+            </div>
+              
+            </div>
+            
+          </div>
+          <!-- -------------------------- -->
+
+          <div>
+            <p>Bajaj Finserv No Cost EMI (NCE) on all the variants: Avail up to ₹1,000 cashback. Min. order amount- ₹9000 for 6 months NCE & ₹5000 for 3 months NCE. Offer valid till 29th Nov
+              ICICI Bank Offer on all the variants: ₹2,000 Instant Discount* with ICICI Bank Credit Cards & EMI *T&C Apply. Offer valid till 29th Nov</p>
+          </div>
+         
+          <div>
+
+            
+
+
+            <button class="btn btn-dark" (click)="addtoCart(orderPrdct)" routerLink="/cart"> <i class="bi bi-cart-check-fill  "></i> Add to cart</button>
+            <a class="btn btn-dark ms-3" [routerLink]="['/order-palace',orderPrdct._id]">Buy now</a>
+          </div>
+          <div class="mt-4 ">
+            <label class="fs-5">Specification</label>
+            <hr>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2">
+              <span>Highlight:</span>
+            </div>
+            <div class="col-md-8">
+
+              <span>
+                <ul>
+                  <li>{{orderPrdct.storage}} GB ROM</li>
+                  <li>{{orderPrdct.color}}</li>
+                  <li>{{orderPrdct.D_size}}</li>
+                  <li>12MP 12MP | 12MP Front Camera</li>
+                  <li>{{orderPrdct.processor}}</li>
+                </ul>
+              </span>
+            </div>
+          </div>
+        
+
+          <div class="mt-4 ">
+            <label class="fs-5">Description</label>
+          </div>
+          <div>
+            <p>{{orderPrdct.description}}</p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Viw Image -->
+
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1" >
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center">
+     <div class="pt-4 pb-5">
+      <img [src]="Image" alt="" width="300px">
+     </div>
+  </div>
+</div>
+
+<!-- ----------------------------- -->
+<div class="offcanvas offcanvas-end rounded-bottom" style="width: 250px; height: 300px; margin-top: 62px; " tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="   d-flex ms-4 mt-3">
+    <div class="bg-secondary rounded-circle " style="width: 50px; height:50px; ">
+    </div>
+    <div>
+    <h6 class="ms-3 mt-1"  >{{Uname}}</h6>
+    <p class="ms-3"  style="font-size:12px ;">{{Email}}</p>
+  </div>
+</div>
+<hr>
+
+
+  <div class=" ms-4 ">
+    <div>
+      <i class="bi bi-person fs-4 me-3"></i>
+      <strong><a class="" >Profile</a></strong>
+    </div>
+    <div>
+      <i class="bi bi-bag-check fs-4 me-3" ></i>
+      <strong><a class="text-decoration-none text-dark" routerLink="/userView-admin" >Orders</a></strong>
+    </div>
+    <div class="mt-1">
+      <strong><i class="bi bi-box-arrow-left fs-4  me-3" ></i></strong>
+      <strong><a class="text-decoration-none text-dark" routerLink="/login">Logout</a></strong>
+    </div>
+    
+  </div>
+</div>
+
+
